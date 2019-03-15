@@ -11,62 +11,6 @@
 
 
     <link rel="stylesheet" href="/style.css" />
-    <style>
-
-        :root {
-            --gutter: 20px;
-        }
-
-        body {
-            background-color: dimgrey;
-        }
-
-        .row-background {
-            background-color: #fff;
-        }
-
-        .hs { /** acts as the grid-container **/
-            display: grid;
-            grid-gap: 10px;
-            grid-template-columns:
-                    10px
-                    repeat(6, calc(50% - 40px)) /* 6 is the # of movies.  We can set up a count in JS and assign to a var(--total) where we can use here */
-                    10px;
-            grid-auto-flow: column;
-            grid-auto-columns: calc(50% - var(--gutter) * 2);
-            grid-template-rows: minmax(150px, 1fr); /* need to research a max height */
-            padding: 0 20px;
-        }
-        .card-scroll {
-            display: inline-block;
-            background-color: red;
-        }
-
-        .app {
-            padding: var(--gutter) 0;
-            display: grid;
-            grid-gap: var(--gutter) 0;
-            grid-template-columns: 20px 1fr 20px;
-        }
-        .app > * {
-            grid-column: 2 / -2;
-        }
-        .app > .full {
-            grid-column: 1 / -1;
-        }
-
-        .hs > li:last-child { /* need to reconfigure with div */
-            margin-right: 20px;
-        }
-
-        .hs::before,   /* removing this will cause the text to display vertically.  */
-        .hs::after {        /* this inherits the size of the other cards  */
-            content: '';
-            width: 10px
-        }
-
-
-    </style>
 </head>
 <body>
 
