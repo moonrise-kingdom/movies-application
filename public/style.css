@@ -64,9 +64,8 @@
     display: none;
 }
 
-h1 {
-    line-height: 50%;
-}
+
+
 
 .scrolling-wrapper-flexbox {
     margin-top: 1em;
@@ -88,7 +87,7 @@ h1 {
 
 .custom-container {
     margin-left: 1em;
-    background-color: blue;
+    background-color: pink;
     width: 60%;
     height: 65vh;
 }
