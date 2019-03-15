@@ -2,10 +2,11 @@ const url=('/api/movies');
 
 const getMovies = () => {
   return fetch(url)
+
       .then(response => response.json());
 };
 
-const addMovie =  (title, rating, id) =>{
+const addMovie =  (title, rating,) =>{
     const newMovie = {title: title, rating: rating, id: id};
     const options = {
       method: 'POST',
@@ -19,4 +20,21 @@ const addMovie =  (title, rating, id) =>{
         .catch(()=> console.log('error'))
     };
 
-export default {getMovies, addMovie};
+const removeMovie = (movieID) => {
+    const options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+    fetch(url + '/' + movieID+ '', options)
+        .then(() => console.log(`movie ${movieID} deleted`))
+        .catch(() => console.log('error on delete'));
+}
+
+
+
+
+
+export default {getMovies, addMovie, removeMovie};
+
