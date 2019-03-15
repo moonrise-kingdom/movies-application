@@ -60,6 +60,11 @@
     /*content: '';*/
     /*width: 10px*/
 /*}*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+
 
 .scrolling-wrapper-flexbox {
     -webkit-overflow-scrolling: touch;
