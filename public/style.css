@@ -70,12 +70,15 @@
     -webkit-overflow-scrolling: touch;
     display: -webkit-flex;
     -webkit-flex-wrap: nowrap;
-
     overflow-x: auto;
+    margin-left: 1em;
+    height: 30vh;
 }
 
 .card {
     flex: 0 0 auto;
     display: inline-block;
     background-color: red;
+    margin-right: .25em;
+    width: 10em;
 }
