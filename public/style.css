@@ -66,7 +66,9 @@
 
 
 
+
 .scrolling-wrapper-flexbox {
+    margin-top: 1em;
     -webkit-overflow-scrolling: touch;
     display: -webkit-flex;
     -webkit-flex-wrap: nowrap;
@@ -81,6 +83,13 @@
     background-color: red;
     margin-right: .25em;
     width: 10.5em;
+}
+
+.custom-container {
+    margin-left: 1em;
+    background-color: pink;
+    width: 60%;
+    height: 65vh;
 }
 
 
