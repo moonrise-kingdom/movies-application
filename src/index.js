@@ -9,6 +9,7 @@ sayHello('World');
  */
 
 import movies from './api.js';
+// movies.getMovies().then((data) => console.log(data.lastIndexOf()))
 
 movies.getMovies().then((movies) => {
   console.log('Here are all the movies:');
