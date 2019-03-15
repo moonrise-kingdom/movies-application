@@ -6,7 +6,7 @@ const getMovies = () => {
       .then(response => response.json());
 };
 
-const addMovie =  (title, rating,) =>{
+const addMovie =  (title, rating, id) =>{
     const newMovie = {title: title, rating: rating, id: id};
     const options = {
       method: 'POST',
