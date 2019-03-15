@@ -61,13 +61,16 @@
     /*width: 10px*/
 /*}*/
 
-.scrolling-wrapper {
-    overflow-x: scroll;
-    overflow-y: hidden:
-    whitespace: nowrap;
+.scrolling-wrapper-flexbox {
+    -webkit-overflow-scrolling: touch;
+    display: -webkit-flex;
+    -webkit-flex-wrap: nowrap;
+
+    overflow-x: auto;
 }
 
 .card {
-    display: inline-block
+    flex: 0 0 auto;
+    display: inline-block;
     background-color: red;
 }
