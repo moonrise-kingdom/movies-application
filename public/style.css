@@ -65,9 +65,17 @@
 }
 
 body {
-    margin: 0 1em;
+    /**margin: 0 1em;**/
     background-image: url("bokeh.jpeg");
     height: 100vh;
+}
+
+header p {
+    color: white;
+}
+
+nav {
+    margin: 0;
 }
 
 
