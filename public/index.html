@@ -12,6 +12,11 @@
 
     <link rel="stylesheet" href="/style.css" />
     <style>
+
+        :root {
+            --gutter: 20px;
+        }
+
         body {
             background-color: dimgrey;
         }
@@ -19,6 +24,48 @@
         .row-background {
             background-color: #fff;
         }
+
+        .hs { /** acts as the grid-container **/
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns:
+                    10px
+                    repeat(6, calc(50% - 40px)) /* 6 is the # of movies.  We can set up a count in JS and assign to a var(--total) where we can use here */
+                    10px;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(50% - var(--gutter) * 2);
+            grid-template-rows: minmax(150px, 1fr); /* need to research a max height */
+            padding: 0 20px;
+        }
+        .card-scroll {
+            display: inline-block;
+            background-color: red;
+        }
+
+        .app {
+            padding: var(--gutter) 0;
+            display: grid;
+            grid-gap: var(--gutter) 0;
+            grid-template-columns: 20px 1fr 20px;
+        }
+        .app > * {
+            grid-column: 2 / -2;
+        }
+        .app > .full {
+            grid-column: 1 / -1;
+        }
+
+        .hs > li:last-child { /* need to reconfigure with div */
+            margin-right: 20px;
+        }
+
+        .hs::before,   /* removing this will cause the text to display vertically.  */
+        .hs::after {        /* this inherits the size of the other cards  */
+            content: '';
+            width: 10px
+        }
+
+
     </style>
 </head>
 <body>
@@ -26,55 +73,74 @@
     <div class="container">
         <h1>Hello There!</h1>
         <p>To get started, edit <code>src/index.js</code>.</p>
-
-        <div class="row row-background">
-            <div id="m1" class="col-sm-6 col-md-3 ">
-                <div class="card bg-dark text-white">
-                    <img src="matrix_poster.jpg" class="card-img" alt="matrix-movie">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Movie Title</h5>
-                        <p class="card-text">Movie Description</p>
-                    </div>
-                </div><!--end of card-->
-            </div><!--end of col-->
-            <div id="m2" class="col-sm-6 col-md-3">
-                <div class="card bg-dark text-white">
-                    <img src="matrix_poster.jpg" class="card-img" alt="matrix-movie">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Movie Title</h5>
-                        <p class="card-text">Movie Description</p>
-                    </div>
-                </div><!--end of card-->
-            </div> <!--end of col-->
-
-            <div class="col-sm-6 col-md-3 ">
-                <div class="card bg-dark text-white">
-                    <img src="matrix_poster.jpg" class="card-img" alt="matrix-movie">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Movie Title</h5>
-                        <p class="card-text">Movie Description</p>
-                    </div>
-                </div><!--end of card-->
-            </div> <!--end of col-->
-            <div class="col-sm-6 col-md-3 ">
-                <div class="card bg-dark text-white">
-                    <img src="matrix_poster.jpg" class="card-img" alt="matrix-movie">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">Movie Title</h5>
-                        <p class="card-text">Movie Description</p>
-                    </div>
-                </div><!--end of card-->
-            </div><!--end of col-->
-        </div> <!--end of row-->
-
-
-
-
-
-
-
-
     </div> <!-- end of bootstrap container  --->
+
+
+
+        <div class="app ">
+
+            <div class="hs full">
+
+                <div id="m1" class="item">
+                    <div class="card-scroll card bg-dark text-white">
+                        <img src="matrix_poster.jpg" class="card-img" alt="matrix-movie">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Movie Title</h5>
+                            <p class="card-text">Movie Description</p>
+                        </div>
+                    </div><!--end of card-->
+                </div><!--end of col-->
+
+                <div id="m2" class="item">
+                    <div class="card-scroll card bg-dark text-white">
+                        <img src="matrix_poster.jpg" class="card-img" alt="matrix-movie">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Movie Title</h5>
+                            <p class="card-text">Movie Description</p>
+                        </div>
+                    </div><!--end of card-->
+                </div> <!--end of col-->
+
+                <div class="item">
+                    <div class="card-scroll card bg-dark text-white">
+                        <img src="matrix_poster.jpg" class="card-img" alt="matrix-movie">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Movie Title</h5>
+                            <p class="card-text">Movie Description</p>
+                        </div>
+                    </div><!--end of card-->
+                </div> <!--end of col-->
+                <div class="item">
+                    <div class="card-scroll card bg-dark text-white">
+                        <img src="matrix_poster.jpg" class="card-img" alt="matrix-movie">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Movie Title</h5>
+                            <p class="card-text">Movie Description</p>
+                        </div>
+                    </div><!--end of card-->
+                </div><!--end of col-->
+
+            </div><!--end of hs container-->
+
+            <div class="container-custom-grid">
+                <div class="item">
+                    <h3>Block for context</h3>
+                </div>
+            </div>
+
+        </div> <!--end of app row-->
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
