@@ -6,6 +6,11 @@
       "id": 1
     },
     {
+      "title": "Star Wars: A New Hope",
+      "rating": "3",
+      "id": 2
+    },
+    {
       "title": "Matrix",
       "rating": "3",
       "id": "3"

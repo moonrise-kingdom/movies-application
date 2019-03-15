@@ -22,4 +22,3 @@ movies.getMovies().then((movies) => {
 
 movies.addMovie('Matrix', '3', '3')
 
-movies.removeMovie((2));
