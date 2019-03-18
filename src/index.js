@@ -23,5 +23,10 @@ console.log(test);
 movies.renderMovies();
 
 
+$("#add").on("click", function(){
+    $("#myModal").modal("show");
+});
+
+
 
 
