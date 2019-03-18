@@ -15,28 +15,6 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-        <!--<a class="navbar-brand" href="#">Movies DB</a>-->
-        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-            <!--<span class="navbar-toggler-icon"></span>-->
-        <!--</button>-->
-        <!--<div class="collapse navbar-collapse" id="navbarNav">-->
-            <!--<ul class="navbar-nav">-->
-                <!--<li class="nav-item active">-->
-                    <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                    <!--<a class="nav-link" href="#">About</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                    <!--<a class="nav-link" href="#">Contact</a>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</nav>-->
-
-
-
 
 
     <header class="custom-container">
@@ -164,20 +142,16 @@
                     <!--INPUT FOR POST TITLE-->
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="delete-mov-title">Movie Title:</span>
+                            <span class="input-group-text" >Choose a Movie to Delete</span>
                         </div>
-                        <input id="delete-title" type="text" class="form-control" aria-label="New Blog Post Title"
-                               aria-describedby="inputGroup-title">
                     </div>
-                    <div class="modal-body">
-                        this is the modal body.
+                    <div class="delete-modal" id="delete-mov-title">
                         <!--CLOSE BUTTON-->
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                 </div>
-
                 <!-- ADD / CANCEL BUTTONS -->
                 <div class="modal-footer">
                     <button id='del-cancel' type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -187,8 +161,7 @@
         </div>
     </div>
 
-
-<!--DONT TOUCH THIS LINE BELOW. THIS GETS BUILT WITH JS--->
+    <!--DONT TOUCH THIS LINE BELOW. THIS GETS BUILT WITH JS--->
     <div id="loader">
         <img id="pinwheel" src="pinwheel.svg" alt="loading...">
     </div>

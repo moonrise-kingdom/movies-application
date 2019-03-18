@@ -57,8 +57,13 @@ function renderMovies() {
     })
 }
 
+function renderDeletePills() {
+    getMovies().then((movies) => {
+        movies.forEach(({title, rating, id}) => {
+            var html = `<a href="#" class="badge badge-danger" id="${id}">${title}</a>`;
+            $('#delete-mov-title').append(html);
+        })
+})}
 
-
-
-export default {getMovies, addMovie, removeMovie, renderMovies};
+export default {getMovies, addMovie, removeMovie, renderMovies, renderDeletePills};
 
