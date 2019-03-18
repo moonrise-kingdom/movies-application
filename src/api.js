@@ -8,8 +8,14 @@ const getMovies = () => {
       .then(response => response.json());
 };
 
+let id=3;
+
 //ADD MOVIE TO DATABASE
-const addMovie =  (title, rating) =>{
+const addMovie =  () =>{
+    id = ++id;
+    let title =$('#title').val();
+    let rating = $("input[name='star-rating']:checked").val();
+
     const newMovie = {title: title, rating: rating, id: id};
     const options = {
       method: 'POST',
