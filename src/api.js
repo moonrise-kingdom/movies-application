@@ -40,6 +40,7 @@ const removeMovie = (movieID) => {
 ///RENDER MOVIE CARDS USING GET MOVIE FUNCTION ///
 function renderMovies() {
     getMovies().then((movies) => {
+        $("#pinwheel").css("display", "none");
         movies.forEach(({title, rating}) => {
             var html = '<div class="card ">';
             html += 'Title: ' + title + '<br>';
