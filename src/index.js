@@ -14,12 +14,6 @@ import movies from './api.js';
 // movies.getMovies().then((data)=> console.log(data.slice(-1)[0].id + 1));
 
 
-const test = movies.getMovies()
-    .then((data)=> data)
-    .then((data)=>console.log(data));
-
-console.log(test);
-
 movies.renderMovies();
 
 
@@ -32,6 +26,13 @@ $('#add-movie-btn').on('click', function(){
     console.log($('#title').val())
     console.log($("input[name='star-rating']:checked").val())
     movies.addMovie();
+    $('#row1').html('');
+    movies.renderMovies();
+    // var html = `<div class="card " id=>`;
+    // html += 'Title: ' + $('#title').val() + '<br>';
+    // html += 'Rating: ' + $("input[name='star-rating']:checked").val() + '</div>';
+    // $('#row1').append(html);
+
 
     $("#myModal").modal("hide");
 });

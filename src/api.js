@@ -8,15 +8,13 @@ const getMovies = () => {
       .then(response => response.json());
 };
 
-let id=3;
 
 //ADD MOVIE TO DATABASE
 const addMovie =  () =>{
-    id = ++id;
     let title =$('#title').val();
     let rating = $("input[name='star-rating']:checked").val();
 
-    const newMovie = {title: title, rating: rating, id: id};
+    const newMovie = {title: title, rating: rating};
     const options = {
       method: 'POST',
       headers: {
@@ -47,8 +45,8 @@ const removeMovie = (movieID) => {
 function renderMovies() {
     getMovies().then((movies) => {
         $("#pinwheel").css("display", "none");
-        movies.forEach(({title, rating}) => {
-            var html = '<div class="card ">';
+        movies.forEach(({title, rating, id}) => {
+            var html = `<div class="card " id="${id}">`;
             html += 'Title: ' + title + '<br>';
             html += 'Rating: ' + rating + '</div>';
             $('#row1').append(html);
