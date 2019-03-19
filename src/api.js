@@ -10,7 +10,7 @@ const getMovies = () => {
 
 
 //ADD MOVIE TO DATABASE
-const addMovie =  () =>{
+const addMovie =  () => {
     let title =$('#title').val();
     let rating = $("input[name='star-rating']:checked").val();
 
@@ -42,14 +42,16 @@ const removeMovie = (movieID) => {
 
 
 ///RENDER MOVIE CARDS USING GET MOVIE FUNCTION ///
-function renderMovies() {
+const renderMovies = () => {
     getMovies().then((movies) => {
         $("#pinwheel").css("display", "none");
         movies.forEach(({title, rating, id}) => {
-            var html = `<div class="card " id="${id}">`;
+            $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=480ce5f77ce66832521205ff223c8438&query=" + title + "&callback=?", function(json){
+            var html = `<div class="card " id="${id}" style="background-image: url('https://image.tmdb.org/t/p/w185/${json.results[0].poster_path}')">`;
             html += 'Title: ' + title + '<br>';
             html += 'Rating: ' + rating + '</div>';
             $('#row1').append(html);
+        });
         })
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.')
@@ -57,7 +59,8 @@ function renderMovies() {
     })
 }
 
-function renderDeletePills() {
+
+const renderDeletePills = () => {
     getMovies().then((movies) => {
         movies.forEach(({title, rating, id}) => {
             var html = `<a href="#" class="badge badge-danger" id="${id}">${title}</a>`;
