@@ -38,7 +38,8 @@ const removeMovie = (movieID) => {
     fetch(url + '/' + movieID+ '', options)
         .then(() => console.log(`movie ${movieID} deleted`))
         .catch(() => console.log('error on delete'));
-}
+};
+
 
 
 ///RENDER MOVIE CARDS USING GET MOVIE FUNCTION ///
@@ -47,15 +48,32 @@ const renderMovies = () => {
         $("#pinwheel").css("display", "none");
         movies.forEach(({title, rating, id}) => {
             $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=480ce5f77ce66832521205ff223c8438&query=" + title + "&callback=?", function(json){
-            var html = `<div class="card " id="${id}" style="background-image: url('https://image.tmdb.org/t/p/w185/${json.results[0].poster_path}')">`;
-            html += 'Title: ' + title + '<br>';
-            html += 'Rating: ' + rating + '</div>';
+            let html = `<div class="card " id="${id}" style="background-image: url('https://image.tmdb.org/t/p/w185/${json.results[0].poster_path}')">`;
+            html += `<div class='cardtitle'>${title}</div>`;
+            html += `<div class="cardrating" id="rating${id}">Rating: ${rating}/5</div></div>`;
             $('#row1').append(html);
         });
         })
     }).catch((error) => {
-        alert('Oh no! Something went wrong.\nCheck the console for details.')
+        alert('Oh no! Something went wrong.\nCheck the console for details.');
         console.log(error);
+    })
+};
+
+const featuredMovie = () =>{
+    getMovies().then((movies) => {
+        console.log(movies);
+        let rndNum = parseInt(Math.random() * (movies.length - 1).toString());
+        let ftMovie = movies[rndNum];
+        $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=480ce5f77ce66832521205ff223c8438&query=" + ftMovie.title + "&callback=?", function(json){
+            let html = `<div class="card " id="${ftMovie.id}" style="background-image: url('https://image.tmdb.org/t/p/w185/${json.results[0].poster_path}')">`;
+            html += `<div class='cardtitle'>${ftMovie.title}</div>`;
+            html += `<div class="cardrating" id="rating${ftMovie.id}"></div></div>`;
+            $('#featured').append(html);
+            let overview = `<p>${json.results[0].overview}</p>`;
+            $('#summary').append(overview);
+        })
+
     })
 }
 
@@ -68,5 +86,5 @@ const renderDeletePills = () => {
         })
 })}
 
-export default {getMovies, addMovie, removeMovie, renderMovies, renderDeletePills};
+export default {getMovies, addMovie, removeMovie, renderMovies, renderDeletePills, featuredMovie};
 

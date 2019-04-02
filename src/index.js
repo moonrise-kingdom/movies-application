@@ -2,6 +2,7 @@
 import movies from './api.js';
 
 movies.renderMovies();
+movies.featuredMovie();
 
 // ADD MOVIE BUTTON MODAL //
 $("#add").on("click", function(){
@@ -10,8 +11,6 @@ $("#add").on("click", function(){
 
 //ADD MOVIE FROM MODAL INFO//
 $('#add-movie-btn').on('click', function(){
-    console.log($('#title').val());
-    console.log($("input[name='star-rating']:checked").val());
     movies.addMovie();
     $('#row1').html('');
     movies.renderMovies();

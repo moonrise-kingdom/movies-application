@@ -17,24 +17,42 @@
 <body>
 
 
-    <header class="custom-container">
-        <div class="header-content-container">
-            <h1 id="header-title">Movie Database</h1>
-            <button id="add" type="button" class="btn btn-outline-primary custom-button">Add a Movie</button>
-            <button id="edit" type="button" class="btn btn-outline-primary custom-button">Edit a Movie</button>
-            <button id="delete" type="button" class="btn btn-outline-primary custom-button">Delete a Movie</button>
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-5">
+                <h1>POPCORN</h1>
+                 <h4>A Movie Database</h4>
+                <p>This website stores movie data in a JSON database, you can add, update and delte movies using the
+                    buttons below. Give it a try!
+                </p>
+                <button id="add" type="button" class="btn btn-outline-primary custom-button">Add a Movie</button>
+                <button id="edit" type="button" class="btn btn-outline-primary custom-button">Edit a Movie</button>
+                <button id="delete" type="button" class="btn btn-outline-primary custom-button">Delete a Movie</button>
+            </div>
+            <div class="col-7">
+                <aside class="d-none d-sm-none d-md-block d-lg-block">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="text-center">Featured Film</h2>
+
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p id="featured">
+                        </p>
+                    </div>
+                    <div class="col">
+                        <h4>Summary</h4>
+                        <div id="summary">
+                        </div>
+                    </div>
+                </div>
+                </aside>
+            </div>
         </div>
 
-        <aside id="film-aside" class="d-none d-sm-block d-md-block d-lg-block">
-            <div id="film-box">
-            <h2>Featured Film</h2>
-
-            </div>
-        </aside>
-
-
-
-    </header> <!-- end of bootstrap container  --->
+    </div> <!-- end of bootstrap container  --->
 
 
 
@@ -108,20 +126,6 @@
                             </label>
                         </div>
 
-                </div>
-                <!-- TAG INPUT -->
-                <div class="input-group mb-3 mx-3 ">
-                    <input id="tags" type="text" class="form-control" placeholder="add tags here..."
-                           aria-label="post tags"
-                           aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary mr-5" type="button" id="addTags">Add</button>
-                    </div>
-                </div>
-                <!-- LIST OF ADDED TAGS -->
-                <div class="modal-body">
-                    <div id="tagsList">
-                    </div>
                 </div>
                 <!-- ADD / CANCEL BUTTONS -->
                 <div class="modal-footer">

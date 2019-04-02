@@ -39,6 +39,31 @@
       "title": "Legally Blonde",
       "rating": "4",
       "id": 8
+    },
+    {
+      "title": "The Hobbit",
+      "rating": "4",
+      "id": 9
+    },
+    {
+      "title": "Inside Man",
+      "rating": "4",
+      "id": 10
+    },
+    {
+      "title": "Fantastic Mr. Fox",
+      "rating": "4",
+      "id": 11
+    },
+    {
+      "title": "Iron Man",
+      "rating": "3",
+      "id": 12
+    },
+    {
+      "title": "Black Hawk Down",
+      "rating": "4",
+      "id": 13
     }
   ]
 }
